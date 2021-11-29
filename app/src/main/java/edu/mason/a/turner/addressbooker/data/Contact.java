@@ -1,4 +1,4 @@
-package edu.mason.a.turner.addressbooker;
+package edu.mason.a.turner.addressbooker.data;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -43,6 +43,8 @@ public class Contact {
     public String getNotes() { return notes; }
 
     // SETTERS
+
+    public void setId(int id) { this.id = id; }
     public void setNotes(String notes) {
         this.notes = notes;
     }

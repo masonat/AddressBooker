@@ -1,11 +1,15 @@
-package edu.mason.a.turner.addressbooker;
+package edu.mason.a.turner.addressbooker.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import edu.mason.a.turner.addressbooker.ui.main.MainActivity;
+import edu.mason.a.turner.addressbooker.data.Contact;
+import edu.mason.a.turner.addressbooker.data.ContactDatabase;
 import edu.mason.a.turner.addressbooker.databinding.ActivityAddContactBinding;
 
 public class AddContactActivity extends AppCompatActivity {
@@ -24,7 +28,7 @@ public class AddContactActivity extends AppCompatActivity {
 
     public void saveContact (View view) {
 
-        Intent mainMenuActivity = new Intent (this, MainActivity.class);
+//        Intent mainMenuActivity = new Intent (this, MainActivity.class);
 
         String name = binding.editTextPersonName.getText().toString();
         String address = binding.editTextPostalAddress.getText().toString();
@@ -32,10 +36,14 @@ public class AddContactActivity extends AppCompatActivity {
         String email = binding.editTextEmailAddress.getText().toString();
         String notes = binding.editTextNotes.getText().toString();
 
-        Contact contact = new Contact(name, address, email, phone, notes);
+        // name, address, number, email, notes
+        Contact contact = new Contact(name, address, phone, email, notes);
 
-        startActivity (mainMenuActivity);
+        // get reference to db and save record
+        ContactDatabase.getInstance(this).contactDAO().insertContact(contact);
 
+        setResult(Activity.RESULT_OK);
+        finish();
     }
 
     public void cancelContact (View view) {

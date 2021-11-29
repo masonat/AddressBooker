@@ -1,4 +1,4 @@
-package edu.mason.a.turner.addressbooker;
+package edu.mason.a.turner.addressbooker.data;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -7,6 +7,8 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
+
+import edu.mason.a.turner.addressbooker.data.Contact;
 
 @Dao
 public interface ContactDAO {
