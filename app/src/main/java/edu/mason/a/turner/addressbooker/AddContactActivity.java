@@ -24,7 +24,7 @@ public class AddContactActivity extends AppCompatActivity {
 
     public void saveContact (View view) {
 
-        Intent viewContactActivity = new Intent (this, ViewContactActivity.class);
+        Intent mainMenuActivity = new Intent (this, MainActivity.class);
 
         String name = binding.editTextPersonName.getText().toString();
         String address = binding.editTextPostalAddress.getText().toString();
@@ -32,19 +32,15 @@ public class AddContactActivity extends AppCompatActivity {
         String email = binding.editTextEmailAddress.getText().toString();
         String notes = binding.editTextNotes.getText().toString();
 
-        viewContactActivity.putExtra ("name", name);
-        viewContactActivity.putExtra ("address", address);
-        viewContactActivity.putExtra ("phone", phone);
-        viewContactActivity.putExtra ("email", email);
-        viewContactActivity.putExtra ("notes", notes);
+        Contact contact = new Contact(name, address, email, phone, notes);
 
-        startActivity (viewContactActivity);
+        startActivity (mainMenuActivity);
 
     }
 
     public void cancelContact (View view) {
-        Intent mainMenuActivity = new Intent (this, MainActivity.class);
-        startActivity (mainMenuActivity);
+        Intent MainActivity = new Intent (this, MainActivity.class);
+        startActivity (MainActivity);
     }
 
     public void clearFields(View view) {
