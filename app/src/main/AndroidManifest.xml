@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AddressBooker">
         <activity
-            android:name=".ViewContactActivity"
-            android:exported="false" />
-        <activity
             android:name=".AddContactActivity"
             android:exported="false" />
         <activity

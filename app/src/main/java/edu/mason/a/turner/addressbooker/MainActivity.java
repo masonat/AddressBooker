@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 import edu.mason.a.turner.addressbooker.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

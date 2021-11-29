@@ -6,9 +6,10 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Contact {
-    @ColumnInfo
     @PrimaryKey(autoGenerate = true)
-    private final int id;
+    @ColumnInfo(name = "id")
+
+    private int id;
 
     @ColumnInfo (name = "name")
     private String name;
@@ -26,8 +27,7 @@ public class Contact {
     private String notes;
 
     // constructor
-    public Contact(int id, String name, String address, String number, String email, String notes) {
-        this.id = id;
+    public Contact(String name, String address, String number, String email, String notes) {
         this.name = name;
         this.address = address;
         this.number = number;
