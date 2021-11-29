@@ -21,4 +21,7 @@ public interface ContactDAO {
 
     @Query("SELECT * FROM Contact ORDER BY Name")
     List<Contact> viewAllContacts();
+
+    @Query("DELETE FROM Contact WHERE id = :id")
+    void deleteUsingName(int id);
 }
