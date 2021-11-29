@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Address Book App</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="email">Email</string>
+    <string name="notes">Notes</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="addContactString">Add Contact</string>
+    <string name="mainMenuString">Main Menu</string>
+    <string name="saveButton">Save</string>
+    <string name="cancelButton">Cancel</string>
+    <string name="editButton">Edit</string>
+    <string name="deleteButton">Delete</string>
+    <string name="viewContactMainMenu">Main Menu</string>
+    <string name="newContact">New Contact</string>
+    <string name="viewContact">View Contact</string>
+    <string name="clear">Clear</string>
+</resources>
