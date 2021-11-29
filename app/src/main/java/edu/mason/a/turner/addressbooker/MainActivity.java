@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        addContactButton = (Button) findViewById(R.id.addButton);
+        addContactButton = binding.addButton;
         addContactButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
