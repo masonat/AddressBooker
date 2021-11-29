@@ -51,6 +51,8 @@ public class AddContactActivity extends AppCompatActivity {
         startActivity (MainActivity);
     }
 
+
+
     public void clearFields(View view) {
         binding.editTextPersonName.setText("");
         binding.editTextPostalAddress.setText("");

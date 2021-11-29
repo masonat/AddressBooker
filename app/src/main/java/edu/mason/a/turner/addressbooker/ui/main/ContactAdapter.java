@@ -48,6 +48,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         return contactList.size();
     }
 
+
     static class ContactViewHolder extends RecyclerView.ViewHolder {
         TextView contactName;
         TextView contactNumber;

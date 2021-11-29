@@ -8,8 +8,6 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import edu.mason.a.turner.addressbooker.data.Contact;
-
 @Dao
 public interface ContactDAO {
     @Insert
@@ -25,5 +23,5 @@ public interface ContactDAO {
     List<Contact> viewAllContacts();
 
     @Query("DELETE FROM Contact WHERE id = :id")
-    void deleteUsingName(int id);
+    void deleteUsingName(String id);
 }

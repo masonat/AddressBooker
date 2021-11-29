@@ -5,12 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.mason.a.turner.addressbooker.R;
+import edu.mason.a.turner.addressbooker.UpdateContactActivity;
 import edu.mason.a.turner.addressbooker.data.Contact;
 import edu.mason.a.turner.addressbooker.data.ContactDatabase;
 import edu.mason.a.turner.addressbooker.databinding.ActivityMainBinding;
@@ -23,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private ContactAdapter contactAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,5 +64,13 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_ADD_CONTACT && resultCode == Activity.RESULT_OK) {
             refreshData();
         }
+    }
+
+    public void goToDetails(View view) {
+        Button Button = findViewById(R.id.detailsButton);
+        String contactName = findViewById(R.id.contactName).toString();
+
+        Button.setOnClickListener(v -> startActivity
+                (new Intent(MainActivity.this, UpdateContactActivity.class)));
     }
 }
