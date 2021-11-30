@@ -21,9 +21,10 @@ import edu.mason.a.turner.addressbooker.data.ContactDatabase;
 import edu.mason.a.turner.addressbooker.databinding.ActivityMainBinding;
 import edu.mason.a.turner.addressbooker.ui.AddContactActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ContactAdapter.ContactSelectCallback {
     private final static int REQUEST_CODE_ADD_CONTACT = 1212;
     private final static String RESPONSE_KEY_ADD_CONTACT = "added_contact";
+    private static final int REQUEST_CODE_UPDATE_CONTACT = 1214;
 
 
     private ActivityMainBinding binding;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         List<Contact> contacts = ContactDatabase.getInstance(this).contactDAO().viewAllContacts();
-        contactAdapter = new ContactAdapter(contacts);
+        contactAdapter = new ContactAdapter(contacts, this);
         setupView();
     }
 
@@ -61,15 +62,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE_ADD_CONTACT && resultCode == Activity.RESULT_OK) {
+        if (resultCode == Activity.RESULT_OK) {
             refreshData();
         }
     }
 
-    public void goToDetails(View view) {
-        Button Button = findViewById(R.id.detailsButton);
+    @Override
+    public void onSelectContact(Contact contact) {
         // open up details for proper row in database
-        Button.setOnClickListener(v -> startActivity
-                (new Intent(MainActivity.this, UpdateContactActivity.class)));
+        Intent updateIntent = new Intent(MainActivity.this, UpdateContactActivity.class)
+                .putExtra(UpdateContactActivity.CONTACT_ID_KEY, contact.getId());
+
+        startActivityForResult(updateIntent, REQUEST_CODE_UPDATE_CONTACT);
     }
 }

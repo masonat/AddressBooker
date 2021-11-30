@@ -20,9 +20,11 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     private RecyclerView contactRecyclerView;
 
     private List<Contact> contactList;
+    private ContactSelectCallback callback;
 
-    public ContactAdapter(List<Contact> contactList) {
+    public ContactAdapter(List<Contact> contactList, ContactSelectCallback callback) {
         this.contactList = contactList;
+        this.callback = callback;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -42,12 +44,16 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         Contact contact = contactList.get(position);
-        holder.bind(contact);
+        holder.bind(contact, callback);
     }
 
     @Override
     public int getItemCount() {
         return contactList.size();
+    }
+
+    public interface ContactSelectCallback {
+        void onSelectContact(Contact contact);
     }
 
 
@@ -62,23 +68,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             contactNumber = view.findViewById(R.id.contactNumber);
         }
 
-        void bind(Contact contact) {
+        void bind(final Contact contact, final ContactSelectCallback callback) {
             contactName.setText(contact.getName());
             contactNumber.setText(contact.getNumber());
+
+            itemView.setOnClickListener(v -> callback.onSelectContact(contact));
         }
 
     }
-
-    ItemTouchHelper.SimpleCallback itemTouchHelperCallBack = new ItemTouchHelper
-            .SimpleCallback(0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
-        @Override
-        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-            return false;
-        }
-
-        @Override
-        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            contactList.remove(viewHolder.getAdapterPosition());
-        }
-    };
 }

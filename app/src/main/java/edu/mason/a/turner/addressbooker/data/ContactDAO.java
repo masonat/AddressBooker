@@ -19,9 +19,12 @@ public interface ContactDAO {
     @Update
     void updateContact(Contact contact);
 
+    @Query("SELECT * FROM contact WHERE id = :id")
+    Contact getContactById(int id);
+
     @Query("SELECT * FROM Contact ORDER BY Name")
     List<Contact> viewAllContacts();
 
     @Query("DELETE FROM Contact WHERE id = :id")
-    void deleteUsingName(String id);
+    void deleteById(int id);
 }

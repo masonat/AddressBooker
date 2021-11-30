@@ -3,8 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="100dp"
     android:orientation="vertical"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="?selectableItemBackground"
     android:padding="15dp"
     >
 
@@ -21,13 +24,5 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         tools:text="+123 349 2932 " />
-
-    <Button
-        android:id="@+id/detailsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goToDetails"
-        android:text="@string/details"
-        android:textSize="15sp" />
 
 </LinearLayout>
