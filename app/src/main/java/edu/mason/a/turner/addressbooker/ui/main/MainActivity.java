@@ -68,8 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToDetails(View view) {
         Button Button = findViewById(R.id.detailsButton);
-        String contactName = findViewById(R.id.contactName).toString();
-
+        // open up details for proper row in database
         Button.setOnClickListener(v -> startActivity
                 (new Intent(MainActivity.this, UpdateContactActivity.class)));
     }

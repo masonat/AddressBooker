@@ -24,13 +24,6 @@ public class UpdateContactActivity extends AppCompatActivity {
 
     }
 
-    public void deleteContact(View view) {
-        String deleteId = binding.nameTextView.getText().toString();
-        ContactDatabase.getInstance(this).contactDAO().deleteUsingName(deleteId);
-        setResult(Activity.RESULT_OK);
-        finish();
-    }
-
     public void goToMain(View view) { // implement Main Menu button
         finish();
     }

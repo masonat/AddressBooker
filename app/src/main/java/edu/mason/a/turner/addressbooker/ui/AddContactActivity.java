@@ -17,7 +17,6 @@ public class AddContactActivity extends AppCompatActivity {
     private ActivityAddContactBinding binding;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +49,6 @@ public class AddContactActivity extends AppCompatActivity {
         Intent MainActivity = new Intent (this, MainActivity.class);
         startActivity (MainActivity);
     }
-
-
 
     public void clearFields(View view) {
         binding.editTextPersonName.setText("");

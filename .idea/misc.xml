@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.2552083333333333" />
         <entry key="..\:/Users/Mason/AndroidStudioProjects/AddressBooker/app/src/main/res/layout/activity_add_contact.xml" value="0.28442028985507245" />
         <entry key="..\:/Users/Mason/AndroidStudioProjects/AddressBooker/app/src/main/res/layout/activity_main.xml" value="0.28442028985507245" />
         <entry key="..\:/Users/Mason/AndroidStudioProjects/AddressBooker/app/src/main/res/layout/activity_update_contact.xml" value="0.28442028985507245" />
         <entry key="..\:/Users/Mason/AndroidStudioProjects/AddressBooker/app/src/main/res/layout/activity_view_contact.xml" value="0.28442028985507245" />
         <entry key="..\:/Users/Mason/AndroidStudioProjects/AddressBooker/app/src/main/res/layout/list_item_contact.xml" value="0.28442028985507245" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="app/src/main/res/layout/activity_update_contact.xml" value="0.24010416666666667" />
       </map>
     </option>
   </component>

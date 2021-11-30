@@ -175,17 +175,6 @@
                 android:text="@string/editButton" />
 
             <Button
-                android:id="@+id/deleteButton"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:layout_marginRight="10sp"
-                android:layout_weight="1.5"
-                android:onClick="deleteContact"
-                android:text="@string/deleteButton" />
-
-            <Button
                 android:id="@+id/viewContactMainMenu"
                 style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="wrap_content"
