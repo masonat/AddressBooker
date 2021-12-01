@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import edu.mason.a.turner.addressbooker.ui.main.MainActivity;
 import edu.mason.a.turner.addressbooker.data.Contact;
@@ -15,7 +16,8 @@ import edu.mason.a.turner.addressbooker.databinding.ActivityAddContactBinding;
 public class AddContactActivity extends AppCompatActivity {
 
     private ActivityAddContactBinding binding;
-
+    //private String name = "";
+    //private String phone = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +37,23 @@ public class AddContactActivity extends AppCompatActivity {
         String email = binding.editTextEmailAddress.getText().toString();
         String notes = binding.editTextNotes.getText().toString();
 
-        // name, address, number, email, notes
-        Contact contact = new Contact(name, address, phone, email, notes);
+        if (name.equals("")) {
+            Toast.makeText(this, "Please enter name.", Toast.LENGTH_LONG).show();
+        }
+        else if (phone.equals("")) {
+            Toast.makeText(this, "Please enter phone number.", Toast.LENGTH_LONG).show();
+        }
+        else {
+            // name, address, number, email, notes
+            Contact contact = new Contact(name, address, phone, email, notes);
 
-        // get reference to db and save record
-        ContactDatabase.getInstance(this).contactDAO().insertContact(contact);
+            // get reference to db and save record
+            ContactDatabase.getInstance(this).contactDAO().insertContact(contact);
 
-        setResult(Activity.RESULT_OK);
-        finish();
+            setResult(Activity.RESULT_OK);
+            finish();
+        }
+
     }
 
     public void cancelContact (View view) {
