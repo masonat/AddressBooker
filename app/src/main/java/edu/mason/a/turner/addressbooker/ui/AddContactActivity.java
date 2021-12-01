@@ -16,8 +16,6 @@ import edu.mason.a.turner.addressbooker.databinding.ActivityAddContactBinding;
 public class AddContactActivity extends AppCompatActivity {
 
     private ActivityAddContactBinding binding;
-    //private String name = "";
-    //private String phone = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
