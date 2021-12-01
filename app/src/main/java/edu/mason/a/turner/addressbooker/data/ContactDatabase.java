@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = { Contact.class },version = 1)
+@Database(entities = { Contact.class },version = 1, exportSchema = false)
 public abstract class ContactDatabase extends RoomDatabase {
     public abstract ContactDAO contactDAO();
 
@@ -17,8 +17,7 @@ public abstract class ContactDatabase extends RoomDatabase {
     public static ContactDatabase getInstance(Context context){
         if (contactDatabase == null){
             contactDatabase = Room.databaseBuilder(context, ContactDatabase.class, DATABASE_NAME)
-                    // allows Room database methods to be run on Main thread
-                    .allowMainThreadQueries()
+                    .allowMainThreadQueries() // allows database methods to be run on Main thread
                     .build();
         }
         return contactDatabase;

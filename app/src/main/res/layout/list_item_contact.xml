@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="28sp"
+        android:textStyle="bold"
         tools:text="John Doe" />
 
     <TextView
@@ -23,6 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        tools:text="+123 349 2932 " />
+        tools:text="303-315-7170" />
 
 </LinearLayout>

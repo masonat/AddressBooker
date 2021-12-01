@@ -15,4 +15,10 @@
     <string name="viewContact">View Contact</string>
     <string name="clear">Clear</string>
     <string name="details">Details</string>
+    <string name="editContact">Edit</string>
+    <string name="nameColon">Name:</string>
+    <string name="numberColon">Number:</string>
+    <string name="addressColon">Address:</string>
+    <string name="emailColon">Email:</string>
+    <string name="notesColon">Notes:</string>
 </resources>

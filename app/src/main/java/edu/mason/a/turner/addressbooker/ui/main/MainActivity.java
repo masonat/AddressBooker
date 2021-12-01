@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
-import edu.mason.a.turner.addressbooker.UpdateContactActivity;
+import edu.mason.a.turner.addressbooker.ViewContactActivity;
 import edu.mason.a.turner.addressbooker.data.Contact;
 import edu.mason.a.turner.addressbooker.data.ContactDatabase;
 import edu.mason.a.turner.addressbooker.databinding.ActivityMainBinding;
@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements ContactAdapter.Co
     @Override
     public void onSelectContact(Contact contact) {
         // open up details for proper row in database
-        Intent updateIntent = new Intent(MainActivity.this, UpdateContactActivity.class)
-                .putExtra(UpdateContactActivity.CONTACT_ID_KEY, contact.getId());
+        Intent updateIntent = new Intent(MainActivity.this, ViewContactActivity.class)
+                .putExtra(ViewContactActivity.CONTACT_ID_KEY, contact.getId());
 
         startActivityForResult(updateIntent, REQUEST_CODE_UPDATE_CONTACT);
     }

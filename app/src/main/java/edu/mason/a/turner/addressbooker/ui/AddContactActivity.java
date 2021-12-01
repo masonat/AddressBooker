@@ -16,8 +16,6 @@ import edu.mason.a.turner.addressbooker.databinding.ActivityAddContactBinding;
 public class AddContactActivity extends AppCompatActivity {
 
     private ActivityAddContactBinding binding;
-    //private String name = "";
-    //private String phone = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +26,6 @@ public class AddContactActivity extends AppCompatActivity {
     }
 
     public void saveContact (View view) {
-
-//        Intent mainMenuActivity = new Intent (this, MainActivity.class);
 
         String name = binding.editTextPersonName.getText().toString();
         String address = binding.editTextPostalAddress.getText().toString();
