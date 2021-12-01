@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="85dp"
         android:layout_marginBottom="17dp"
         android:gravity="center|center_horizontal"
@@ -161,7 +161,7 @@
         <TableRow
             android:id="@+id/updateButtonRow"
             android:layout_width="match_parent"
-            android:layout_height="122dp"
+            android:layout_height="80dp"
             android:layout_weight="2">
 
             <Button
@@ -172,7 +172,6 @@
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:layout_weight="1.5"
-                android:onClick="editContact"
                 android:text="@string/editButton" />
 
             <Button
