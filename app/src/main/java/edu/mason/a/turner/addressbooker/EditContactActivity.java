@@ -18,6 +18,13 @@ public class EditContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_contact);
 
+//        int contactId = getIntent().getIntExtra(CONTACT_ID_KEY, -1);
+
+
+//        db = ContactDatabase.getInstance(this);
+//        contact = db.contactDAO().getContactById(contactId);
+//        displayCurrentData(contact);
+
         //displayCurrentData();
     }
 

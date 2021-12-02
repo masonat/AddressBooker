@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import edu.mason.a.turner.addressbooker.data.Contact;
 import edu.mason.a.turner.addressbooker.data.ContactDatabase;
 import edu.mason.a.turner.addressbooker.databinding.ActivityViewContactBinding;
+import edu.mason.a.turner.addressbooker.ui.main.MainActivity;
 
 public class ViewContactActivity extends AppCompatActivity {
 
@@ -76,9 +77,10 @@ public class ViewContactActivity extends AppCompatActivity {
     }
 
     public void editContact(View view) {
-        Intent editIntent = new Intent(ViewContactActivity.this, EditContactActivity.class)
-                .putExtra(ViewContactActivity.CONTACT_ID_KEY, contact.getId());
+        Intent editIntent = new Intent(ViewContactActivity.this, EditContactActivity.class);
+//                .putExtra(ViewContactActivity.CONTACT_ID_KEY, contact.getId());
 
         startActivity(editIntent);
+
     }
 }
