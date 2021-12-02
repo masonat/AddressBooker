@@ -77,10 +77,12 @@ public class ViewContactActivity extends AppCompatActivity {
     }
 
     public void editContact(View view) {
-        Intent editIntent = new Intent(ViewContactActivity.this, EditContactActivity.class);
-//                .putExtra(ViewContactActivity.CONTACT_ID_KEY, contact.getId());
+        Intent editIntent = new Intent(ViewContactActivity.this, EditContactActivity.class)
+                .putExtra(ViewContactActivity.CONTACT_ID_KEY, contact.getId())
+                // forwards the result from next activity to main activity
+                .addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
 
         startActivity(editIntent);
-
+        finish();
     }
 }

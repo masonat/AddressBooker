@@ -2,6 +2,7 @@ package edu.mason.a.turner.addressbooker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,20 +13,24 @@ import edu.mason.a.turner.addressbooker.databinding.ActivityEditContactBinding;
 public class EditContactActivity extends AppCompatActivity {
 
     private ActivityEditContactBinding binding;
+    private Contact contact;
+    private ContactDatabase db;
+    private final String CONTACT_ID_KEY = "contact_id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_contact);
+        binding = ActivityEditContactBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-//        int contactId = getIntent().getIntExtra(CONTACT_ID_KEY, -1);
+        int contactId = getIntent().getIntExtra(CONTACT_ID_KEY, -1);
 
 
-//        db = ContactDatabase.getInstance(this);
-//        contact = db.contactDAO().getContactById(contactId);
-//        displayCurrentData(contact);
+        db = ContactDatabase.getInstance(this);
+        contact = db.contactDAO().getContactById(contactId);
+        displayCurrentData(contact);
 
-        //displayCurrentData();
     }
 
     private void displayCurrentData(Contact contact) {
@@ -36,8 +41,7 @@ public class EditContactActivity extends AppCompatActivity {
         binding.editNotes.setText(contact.getNotes());
     }
 
-    public Contact getUpdatedContactDetails(Contact contact) {
-
+    public Contact getUpdatedContactDetails() {
         contact.setName(binding.editTextPersonName2.getText().toString());
         contact.setAddress(binding.editPostalAddress.getText().toString());
         contact.setNumber(binding.editNumber.getText().toString());
@@ -47,9 +51,10 @@ public class EditContactActivity extends AppCompatActivity {
     }
 
     public void saveContact(View view) {
-//        Contact contact = getUpdatedContactDetails(contact);
-//        db.contactDAO().updateContact(contact);
-//        finish();
+        Contact contact = getUpdatedContactDetails();
+        db.contactDAO().updateContact(contact);
+        setResult(Activity.RESULT_OK);
+        finish();
     }
 
     public void cancelContact(View view) { // returns to viewContact menu
