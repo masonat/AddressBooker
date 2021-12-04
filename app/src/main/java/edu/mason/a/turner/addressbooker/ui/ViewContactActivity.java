@@ -1,4 +1,4 @@
-package edu.mason.a.turner.addressbooker;
+package edu.mason.a.turner.addressbooker.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import edu.mason.a.turner.addressbooker.data.Contact;
 import edu.mason.a.turner.addressbooker.data.ContactDatabase;
 import edu.mason.a.turner.addressbooker.databinding.ActivityViewContactBinding;
-import edu.mason.a.turner.addressbooker.ui.main.MainActivity;
 
 public class ViewContactActivity extends AppCompatActivity {
 

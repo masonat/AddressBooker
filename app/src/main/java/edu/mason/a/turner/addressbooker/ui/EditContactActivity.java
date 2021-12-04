@@ -1,4 +1,4 @@
-package edu.mason.a.turner.addressbooker;
+package edu.mason.a.turner.addressbooker.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 

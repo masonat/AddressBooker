@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
-import edu.mason.a.turner.addressbooker.ViewContactActivity;
+import edu.mason.a.turner.addressbooker.ui.ViewContactActivity;
 import edu.mason.a.turner.addressbooker.data.Contact;
 import edu.mason.a.turner.addressbooker.data.ContactDatabase;
 import edu.mason.a.turner.addressbooker.databinding.ActivityMainBinding;
