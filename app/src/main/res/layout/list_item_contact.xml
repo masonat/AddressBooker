@@ -15,8 +15,8 @@
         android:id="@+id/contactName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:textColor="#BF000000"
+        android:textSize="26sp"
         tools:text="John Doe" />
 
     <TextView

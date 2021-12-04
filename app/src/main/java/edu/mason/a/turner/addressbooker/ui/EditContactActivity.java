@@ -34,7 +34,7 @@ public class EditContactActivity extends AppCompatActivity {
     }
 
     private void displayCurrentData(Contact contact) {
-        binding.editTextPersonName2.setText(contact.getName());
+        binding.editName.setText(contact.getName());
         binding.editPostalAddress.setText(contact.getAddress());
         binding.editNumber.setText(contact.getNumber());
         binding.editEmail.setText(contact.getEmail());
@@ -42,7 +42,7 @@ public class EditContactActivity extends AppCompatActivity {
     }
 
     public Contact getUpdatedContactDetails() {
-        contact.setName(binding.editTextPersonName2.getText().toString());
+        contact.setName(binding.editName.getText().toString());
         contact.setAddress(binding.editPostalAddress.getText().toString());
         contact.setNumber(binding.editNumber.getText().toString());
         contact.setEmail(binding.editEmail.getText().toString());

@@ -22,7 +22,7 @@ public interface ContactDAO {
     @Query("SELECT * FROM contact WHERE id = :id")
     Contact getContactById(int id);
 
-    @Query("SELECT * FROM Contact ORDER BY Name")
+    @Query("SELECT * FROM Contact ORDER BY Name ASC")
     List<Contact> viewAllContacts();
 
     @Query("DELETE FROM Contact WHERE id = :id")
