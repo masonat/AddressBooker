@@ -16,10 +16,8 @@ import edu.mason.a.turner.addressbooker.data.Contact;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder>  {
 
-    private RecyclerView contactRecyclerView;
-
     private List<Contact> contactList;
-    private ContactSelectCallback callback;
+    private final ContactSelectCallback callback;
 
     public ContactAdapter(List<Contact> contactList, ContactSelectCallback callback) {
         this.contactList = contactList;
@@ -55,11 +53,9 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         void onSelectContact(Contact contact);
     }
 
-
     static class ContactViewHolder extends RecyclerView.ViewHolder {
         TextView contactName;
         TextView contactNumber;
-
 
         ContactViewHolder(View view) {
             super(view);
