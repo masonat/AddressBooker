@@ -31,7 +31,7 @@
             android:gravity="center_horizontal">
 
             <EditText
-                android:id="@+id/editTextPersonName2"
+                android:id="@+id/editName"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginLeft="5dp"
