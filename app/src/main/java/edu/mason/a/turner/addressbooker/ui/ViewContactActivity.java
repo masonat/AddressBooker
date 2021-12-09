@@ -43,24 +43,6 @@ public class ViewContactActivity extends AppCompatActivity {
         binding.emailTextView.setText(contact.getEmail());
     }
 
-   /* public void saveContact(View view) {
-        Contact contact = getUpdatedContactDetails();
-        db.contactDAO().updateContact(contact);
-        setResult(Activity.RESULT_OK);
-        finish();
-    }
-
-    public Contact getUpdatedContactDetails() {
-        contact.setName(binding.nameTextView.getText().toString());
-        contact.setAddress(binding.addressTextView.getText().toString());
-        contact.setNumber(binding.phoneTextView.getText().toString());
-        contact.setEmail(binding.emailTextView.getText().toString());
-        contact.setNotes(binding.notesTextView.getText().toString());
-        return contact;
-    }*/
-
-
-
     public void deleteContact(View view) {
         // removes contact from db
         db.contactDAO().deleteContact(contact);
