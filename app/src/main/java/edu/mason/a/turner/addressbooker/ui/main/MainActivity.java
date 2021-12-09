@@ -16,15 +16,13 @@ import edu.mason.a.turner.addressbooker.databinding.ActivityMainBinding;
 import edu.mason.a.turner.addressbooker.ui.AddContactActivity;
 
 public class MainActivity extends AppCompatActivity implements ContactAdapter.ContactSelectCallback {
+
     private final static int REQUEST_CODE_ADD_CONTACT = 1212;
     private final static String RESPONSE_KEY_ADD_CONTACT = "added_contact";
     private static final int REQUEST_CODE_UPDATE_CONTACT = 1214;
 
-
     private ActivityMainBinding binding;
     private ContactAdapter contactAdapter;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements ContactAdapter.Co
         List<Contact> contacts = ContactDatabase.getInstance(this).contactDAO().viewAllContacts();
         contactAdapter.updateContactList(contacts);
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
