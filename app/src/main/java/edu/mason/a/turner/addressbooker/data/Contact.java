@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey;
 public class Contact {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-
     private int id;
 
     @ColumnInfo (name = "name")
