@@ -15,7 +15,6 @@ public class EditContactActivity extends AppCompatActivity {
     private ActivityEditContactBinding binding;
     private Contact contact;
     private ContactDatabase db;
-    private final String CONTACT_ID_KEY = "contact_id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +23,7 @@ public class EditContactActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        String CONTACT_ID_KEY = "contact_id";
         int contactId = getIntent().getIntExtra(CONTACT_ID_KEY, -1);
 
 
